@@ -17,3 +17,18 @@ clean: ## clean dotfiles
 	[ -f ~/.vimrc ] || rm ~/.vimrc
 	[ -f ~/.zshrc ] || rm ~/.zshrc
 	[ -f ~/.gitconfig ] || rm ~/.gitconfig
+
+brew: ## setup homebrew
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	brew bundle check
+	brew bundle
+
+shell: ## setup zsh
+	grep -q "/usr/local/bin/zsh" /etc/shells || sudo echo "/usr/local/bin/zsh" >> /etc/shells
+	sudo chsh -s /usr/local/bin/zsh
+
+defaluts: ## setup defaults write
+	defaults write com.apple.dock orientation -string "left"
+	defaults write com.apple.dock autohide -bool true
+	defaults write com.apple.dock tilesize -int 30
+	killall Dock
