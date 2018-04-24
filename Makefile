@@ -24,7 +24,7 @@ brew: ## setup homebrew
 	brew bundle
 
 shell: ## setup zsh
-	grep -q "/usr/local/bin/zsh" /etc/shells || sudo echo "/usr/local/bin/zsh" >> /etc/shells
+	sudo sh -c "grep -q '/usr/local/bin/zsh' /etc/shells || echo '/usr/local/bin/zsh' >> /etc/shells"
 	sudo chsh -s /usr/local/bin/zsh
 
 defaluts: ## setup defaults write
