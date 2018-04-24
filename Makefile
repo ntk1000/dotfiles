@@ -32,3 +32,6 @@ defaluts: ## setup defaults write
 	defaults write com.apple.dock autohide -bool true
 	defaults write com.apple.dock tilesize -int 30
 	killall Dock
+
+vim: ## setup vim
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
