@@ -20,6 +20,7 @@ clean: ## clean dotfiles
 
 brew: ## setup homebrew
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	brew bundle cleanup
 	brew bundle check
 	brew bundle
 
