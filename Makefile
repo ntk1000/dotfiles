@@ -1,5 +1,4 @@
 
-.PHONY: all
 .DEFAULT_GOAL := help
 
 help:
@@ -18,13 +17,15 @@ clean: ## clean dotfiles
 	[ -f ~/.zshrc ] || rm ~/.zshrc
 	[ -f ~/.gitconfig ] || rm ~/.gitconfig
 
-brew: ## setup homebrew
+brew: ## setup homebrew via Brewfile
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	brew bundle cleanup
-	brew bundle check
 	brew bundle
 
-shell: ## setup zsh
+vim: ## install plug.vim
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+shell: ## setup zsh as default shell
 	sudo sh -c "grep -q '/usr/local/bin/zsh' /etc/shells || echo '/usr/local/bin/zsh' >> /etc/shells"
 	sudo chsh -s /usr/local/bin/zsh
 
@@ -34,5 +35,4 @@ defaluts: ## setup defaults write
 	defaults write com.apple.dock tilesize -int 30
 	killall Dock
 
-vim: ## setup vim
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+.PHONY: all
