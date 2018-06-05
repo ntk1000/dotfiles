@@ -13,12 +13,12 @@ all: ## deploy all dotfiles
 	[ -f ~/.gitconfig ] || ln -s $(PWD)/gitconfig ~/.gitconfig
 
 clean: ## clean dotfiles
-	[ -f ~/.vimrc ] || rm ~/.vimrc
-	[ -f ~/.zshrc ] || rm ~/.zshrc
-	[ -f ~/.gitconfig ] || rm ~/.gitconfig
+	[ -f ~/.vimrc ] && rm ~/.vimrc
+	[ -f ~/.zshrc ] && rm ~/.zshrc
+	[ -f ~/.gitconfig ] && rm ~/.gitconfig
 
 brew: ## setup homebrew via Brewfile
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	/usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	brew bundle cleanup
 	brew bundle
 
