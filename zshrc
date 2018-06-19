@@ -11,6 +11,7 @@ alias vi='vim'
 alias sed='gsed'
 alias findervisible='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder;'
 alias finderunvisible='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder;'
+alias ch='curl -D - -s -o /dev/null'
 
 # default options
 alias rm='rm -i'
