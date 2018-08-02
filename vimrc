@@ -105,27 +105,28 @@ if executable('ag')
 endif
 
  
-" augroup filetypedetect
+augroup filetypedetect
 "   command! -nargs=* -complete=help Help vertical belowright help <args>
 "   autocmd FileType help wincmd L
 "   
-"   autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
-"   autocmd BufNewFile,BufRead .nginx.conf*,nginx.conf* setf nginx
-"   autocmd BufNewFile,BufRead *.hcl setf conf
-"   autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
-"   
+   autocmd BufNewFile,BufRead .nginx.conf*,nginx.conf* setf nginx
+   autocmd BufNewFile,BufRead *.hcl setf conf
+   autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
+   
 "   autocmd BufNewFile,BufRead *.ino setlocal noet ts=4 sw=4 sts=4
-"   autocmd BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
-"   autocmd BufNewFile,BufRead *.md setlocal noet ts=4 sw=4
+   autocmd BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
+   autocmd BufNewFile,BufRead *.md setlocal noet ts=4 sw=4
 "   autocmd BufNewFile,BufRead *.html setlocal noet ts=4 sw=4
 "   autocmd BufNewFile,BufRead *.vim setlocal expandtab shiftwidth=2 tabstop=2
-"   autocmd BufNewFile,BufRead *.hcl setlocal expandtab shiftwidth=2 tabstop=2
-"   autocmd BufNewFile,BufRead *.sh setlocal expandtab shiftwidth=2 tabstop=2
+   autocmd BufNewFile,BufRead *.hcl setlocal expandtab shiftwidth=2 tabstop=2
+   autocmd BufNewFile,BufRead *.sh setlocal expandtab shiftwidth=2 tabstop=2
+   autocmd BufNewFile,BufRead *.yml setlocal expandtab shiftwidth=2 tabstop=2
+   autocmd BufNewFile,BufRead Dockerfile setlocal expandtab shiftwidth=2 tabstop=2
 "   autocmd BufNewFile,BufRead *.proto setlocal expandtab shiftwidth=2 tabstop=2
-"   
-"   autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2
-"   autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
-" augroup END
+   
+   autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2
+   autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
+augroup END
 
 " ////////////
 " STATUSLINE
@@ -213,19 +214,19 @@ set statusline+=%#myInfoColor#
 set statusline+=\ %{StatusLineFiletype()}\ %{StatusLinePercent()}\ %l:%v
 set statusline+=\ %*
 
-" "=====================================================
-" "===================== MAPPINGS ======================
-" 
-" " This comes first, because we have mappings that depend on leader
-" " With a map leader it's possible to do extra key combinations
-" " i.e: <leader>w saves the current file
+"=====================================================
+"===================== MAPPINGS ======================
+
+" This comes first, because we have mappings that depend on leader
+" With a map leader it's possible to do extra key combinations
+" i.e: <leader>w saves the current file
 let mapleader = ","
-" 
-" " Some useful quickfix shortcuts for quickfix
-" map <C-n> :cn<CR>
-" map <C-m> :cp<CR>
-" nnoremap <leader>a :cclose<CR>
-" 
+ 
+" Some useful quickfix shortcuts for quickfix
+map <C-n> :cn<CR>
+map <C-m> :cp<CR>
+nnoremap <leader>a :cclose<CR>
+ 
 " " put quickfix window always to the bottom
 " augroup quickfix
 "     autocmd!
@@ -372,86 +373,88 @@ let mapleader = ","
 " vnoremap <leader>gb :Gblame<CR>
 " nnoremap <leader>gb :Gblame<CR>
 " 
-" " ==================== vim-go ====================
-" let g:go_fmt_fail_silently = 1
-" let g:go_fmt_command = "goimports"
-" let g:go_fmt_options = {
-"   \ 'goimports': '-local do/',
-"   \ }
-" 
-" let g:go_debug_windows = {
-"       \ 'vars':  'leftabove 35vnew',
-"       \ 'stack': 'botright 10new',
-" \ }
-" 
-" 
-" let g:go_sameid_search_enabled = 1
-" 
-" let g:go_test_prepend_name = 1
-" let g:go_list_type = "quickfix"
-" 
-" let g:go_auto_type_info = 0
-" let g:go_auto_sameids = 0
-" 
-" let g:go_def_mode = "guru"
-" let g:go_echo_command_info = 1
-" let g:go_gocode_autobuild = 1
-" let g:go_gocode_unimported_packages = 1
-" 
-" let g:go_autodetect_gopath = 1
-" " let g:go_info_mode = "guru"
-" let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-" let g:go_highlight_space_tab_error = 0
-" let g:go_highlight_array_whitespace_error = 0
-" let g:go_highlight_trailing_whitespace_error = 0
-" let g:go_highlight_extra_types = 0
-" let g:go_highlight_build_constraints = 1
-" let g:go_highlight_types = 0
-" let g:go_highlight_format_strings = 0
-" 
-" let g:go_modifytags_transform = 'camelcase'
-" let g:go_fold_enable = []
+" ==================== vim-go ====================
+let g:go_fmt_fail_silently = 1
+let g:go_fmt_command = "goimports"
+let g:go_fmt_options = {
+  \ 'goimports': '-local do/',
+  \ }
+
+let g:go_debug_windows = {
+      \ 'vars':  'leftabove 35vnew',
+      \ 'stack': 'botright 10new',
+\ }
+
+
+let g:go_sameid_search_enabled = 1
+
+let g:go_test_prepend_name = 1
+let g:go_list_type = "quickfix"
+
+let g:go_auto_type_info = 0
+let g:go_auto_sameids = 0
+
+let g:go_def_mode = "guru"
+let g:go_echo_command_info = 1
+let g:go_gocode_autobuild = 1
+let g:go_gocode_unimported_packages = 1
+
+let g:go_autodetect_gopath = 1
+" let g:go_info_mode = "guru"
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_highlight_space_tab_error = 0
+let g:go_highlight_array_whitespace_error = 0
+let g:go_highlight_trailing_whitespace_error = 0
+let g:go_highlight_extra_types = 0
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_types = 0
+let g:go_highlight_format_strings = 0
+
+let g:go_modifytags_transform = 'camelcase'
+let g:go_fold_enable = []
 " 
 " nmap <C-g> :GoDecls<cr>
 " imap <C-g> <esc>:<C-u>GoDecls<cr>
 " 
-" " run :GoBuild or :GoTestCompile based on the go file
-" function! s:build_go_files()
-"   let l:file = expand('%')
-"   if l:file =~# '^\f\+_test\.go$'
-"     call go#test#Test(0, 1)
-"   elseif l:file =~# '^\f\+\.go$'
-"     call go#cmd#Build(0)
-"   endif
-" endfunction
-" 
-" augroup go
-"   autocmd!
-" 
-"   autocmd FileType go nmap <silent> <Leader>v <Plug>(go-def-vertical)
-"   autocmd FileType go nmap <silent> <Leader>s <Plug>(go-def-split)
-"   autocmd FileType go nmap <silent> <Leader>d <Plug>(go-def-tab)
-" 
-"   autocmd FileType go nmap <silent> <Leader>x <Plug>(go-doc-vertical)
-" 
-"   autocmd FileType go nmap <silent> <Leader>i <Plug>(go-info)
-"   autocmd FileType go nmap <silent> <Leader>l <Plug>(go-metalinter)
-" 
-"   autocmd FileType go nmap <silent> <leader>b :<C-u>call <SID>build_go_files()<CR>
-"   autocmd FileType go nmap <silent> <leader>t  <Plug>(go-test)
-"   autocmd FileType go nmap <silent> <leader>r  <Plug>(go-run)
-"   autocmd FileType go nmap <silent> <leader>e  <Plug>(go-install)
-" 
-"   autocmd FileType go nmap <silent> <Leader>c <Plug>(go-coverage-toggle)
-" 
-"   " I like these more!
-"   autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-"   autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-"   autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
-"   autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
-" augroup END
-" 
-" 
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+augroup go
+  autocmd!
+
+  autocmd FileType go nmap <silent> <Leader>v <Plug>(go-def-vertical)
+  autocmd FileType go nmap <silent> <Leader>s <Plug>(go-def-split)
+  autocmd FileType go nmap <silent> <Leader>d <Plug>(go-def-tab)
+  autocmd FileType go nmap <silent> <Leader>p <Plug>(go-def-pop)
+  autocmd FileType go nmap <silent> <Leader>s <Plug>(go-def-stack)
+
+  autocmd FileType go nmap <silent> <Leader>x <Plug>(go-doc-vertical)
+
+  autocmd FileType go nmap <silent> <Leader>i <Plug>(go-info)
+  autocmd FileType go nmap <silent> <Leader>l <Plug>(go-metalinter)
+
+  autocmd FileType go nmap <silent> <leader>b :<C-u>call <SID>build_go_files()<CR>
+  autocmd FileType go nmap <silent> <leader>t  <Plug>(go-test)
+  autocmd FileType go nmap <silent> <leader>r  <Plug>(go-run)
+  autocmd FileType go nmap <silent> <leader>e  <Plug>(go-install)
+
+  autocmd FileType go nmap <silent> <Leader>c <Plug>(go-coverage-toggle)
+
+  " I like these more!
+  autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+  autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+  autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+  autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+augroup END
+ 
+ 
 " " ==================== FZF ====================
 " let g:fzf_command_prefix = 'Fzf'
 " let g:fzf_layout = { 'down': '~20%' }
@@ -484,30 +487,30 @@ let mapleader = ","
 " let g:delimitMate_smart_matchpairs = '^\%(\w\|\$\)'   
 " 
 " imap <expr> <CR> pumvisible() ? "\<c-y>" : "<Plug>delimitMateCR"
-" 
+ 
 " ////////////
 " NERDTree
 " ////////////
-"
+
 " For toggling
 noremap <Leader>n :NERDTreeToggle<cr>
 noremap <Leader>f :NERDTreeFind<cr>
 
 let NERDTreeShowHidden=1
 
-" 
+ 
 " ////////////
 " markdown
 " ////////////
-"
+
 let g:vim_markdown_folding_disabled = 1 " disable folding
 let g:vim_markdown_new_list_item_indent = 2
-" let g:vim_markdown_fenced_languages = ['go=go', 'viml=vim', 'bash=sh']
-" let g:vim_markdown_toml_frontmatter = 1
-" let g:vim_markdown_frontmatter = 1
-" let g:vim_markdown_no_extensions_in_markdown = 1
-" 
-" 
+let g:vim_markdown_fenced_languages = ['go=go', 'viml=vim', 'bash=sh']
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_no_extensions_in_markdown = 1
+ 
+ 
 " " ==================== vim-json ====================
 " let g:vim_json_syntax_conceal = 0
 " 
