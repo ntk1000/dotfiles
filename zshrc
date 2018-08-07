@@ -249,3 +249,6 @@ eval "$(goenv init -)"
 #source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
+
+# added by travis gem
+[ -f /Users/junasano/.travis/travis.sh ] && source /Users/junasano/.travis/travis.sh
