@@ -32,6 +32,7 @@ Plug 'SirVer/ultisnips' " snippet
 Plug 'Raimondi/delimitMate' " auto-completion for quotes, parens, brackets, etc.
 Plug 'mileszs/ack.vim' " search tool integrate with ag
 Plug 'scrooloose/nerdtree' " tree tool
+Plug 'lambdalisue/vim-gista' " gist
 
 call plug#end()
 
