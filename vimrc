@@ -215,8 +215,9 @@ set statusline+=%#myInfoColor#
 set statusline+=\ %{StatusLineFiletype()}\ %{StatusLinePercent()}\ %l:%v
 set statusline+=\ %*
 
-"=====================================================
-"===================== MAPPINGS ======================
+" ////////////
+" MAPPINGS
+" ////////////
 
 " This comes first, because we have mappings that depend on leader
 " With a map leader it's possible to do extra key combinations
@@ -374,7 +375,9 @@ nnoremap <leader>a :cclose<CR>
 " vnoremap <leader>gb :Gblame<CR>
 " nnoremap <leader>gb :Gblame<CR>
 " 
-" ==================== vim-go ====================
+" ////////////
+" vim-go
+" ////////////
 let g:go_fmt_fail_silently = 1
 let g:go_fmt_command = "goimports"
 let g:go_fmt_options = {
