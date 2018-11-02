@@ -8,9 +8,11 @@ all: ## create bin,pkg,src and deploy all dotfiles
 	[ -d ~/bin] || mkdir -p ~/bin
 	[ -d ~/pkg] || mkdir -p ~/pkg
 	[ -d ~/src] || mkdir -p ~/src
+	[ -d ~/.config] || mkdir -p ~/.config
 	[ -f ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
 	[ -f ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
 	[ -f ~/.gitconfig ] || ln -s $(PWD)/gitconfig ~/.gitconfig
+	[ -f ~/.config/hub ] || ln -s $(PWD)/hub ~/.config/hub
 
 clean: ## clean dotfiles
 	[ -f ~/.vimrc ] && rm ~/.vimrc
