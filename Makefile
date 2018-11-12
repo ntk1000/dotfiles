@@ -29,7 +29,7 @@ vim: ## install plug.vim
 
 shell: ## setup zsh as default shell
 	sudo sh -c "grep -q '/usr/local/bin/zsh' /etc/shells || echo '/usr/local/bin/zsh' >> /etc/shells"
-	sudo chsh -s /usr/local/bin/zsh
+	sudo chsh -s /usr/local/bin/zsh junasano
 
 defaluts: ## setup defaults write
 	defaults write com.apple.dock orientation -string "left"
