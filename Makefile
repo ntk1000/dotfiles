@@ -31,10 +31,17 @@ shell: ## setup zsh as default shell
 	sudo sh -c "grep -q '/usr/local/bin/zsh' /etc/shells || echo '/usr/local/bin/zsh' >> /etc/shells"
 	sudo chsh -s /usr/local/bin/zsh junasano
 
-defaluts: ## setup defaults write
+octave: ## setup octave 2018 edition via http://www.schoeps.org/home/2018/01/how-to-compile-gnu-octave-with-openblas-on-macos/
+	brew tap dpo/openblas
+	brew tap-pin dpo/openblas
+	brew install dpo/openblas/octave --devel --with-qt --with-java
+
+defaults: ## setup defaults write
 	defaults write com.apple.dock orientation -string "left"
 	defaults write com.apple.dock autohide -bool true
 	defaults write com.apple.dock tilesize -int 30
 	killall Dock
+	defaults write com.apple.finder CreateDesktop false
+	killall Finder
 
 .PHONY: all

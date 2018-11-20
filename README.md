@@ -34,10 +34,10 @@ provision tools, dotfiles via shell
 	tfenv install 0.8.4
 	tfenv use 0.8.4
 	```
-	* vim
+	* go tool
 	```
-	gotpl
-	hclfmt
+	gotpl go get github.com/tsg/gotpl
+	hclfmt go get github.com/fatih/hclfmt
 	```
 	* setup names
 	```
