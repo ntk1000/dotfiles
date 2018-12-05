@@ -36,14 +36,15 @@ brew "tree"
 brew "vim"
 brew "wget"
 brew "zsh"
+tap "dpo/openblas", pin: true
+brew "dpo/openblas/octave", args: ["devel", "with-qt", "with-java"]
+brew "gnuplot", args: ["with-aquaterm"]
 
 tap "caskroom/cask"
 tap "caskroom/versions"
 cask "alfred"
 cask "appcleaner"
 cask "boostnote"
-# comment out cask docker to fix old version docker
-# cask "docker"
 cask "firefox"
 cask "flux"
 cask "fly"
@@ -62,3 +63,7 @@ cask "slack"
 cask "spotify"
 cask "visual-studio-code"
 cask "virtualbox"
+cask "aquaterm"
+# comment out cask docker to fix old version docker
+# cask docker
+
