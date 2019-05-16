@@ -9,15 +9,15 @@ all: ## create bin,pkg,src and deploy all dotfiles
 	[ -d ~/pkg] || mkdir -p ~/pkg
 	[ -d ~/src] || mkdir -p ~/src
 	[ -d ~/.config] || mkdir -p ~/.config
-	[ -f ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
-	[ -f ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
-	[ -f ~/.gitconfig ] || ln -s $(PWD)/gitconfig ~/.gitconfig
-	[ -f ~/.config/hub ] || ln -s $(PWD)/hub ~/.config/hub
+	[ -L ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
+	[ -L ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
+	[ -L ~/.gitconfig ] || ln -s $(PWD)/gitconfig ~/.gitconfig
+	[ -L ~/.config/hub ] || ln -s $(PWD)/hub ~/.config/hub
 
 clean: ## clean dotfiles
-	[ -f ~/.vimrc ] && rm ~/.vimrc
-	[ -f ~/.zshrc ] && rm ~/.zshrc
-	[ -f ~/.gitconfig ] && rm ~/.gitconfig
+	[ -L ~/.vimrc ] && rm ~/.vimrc
+	[ -L ~/.zshrc ] && rm ~/.zshrc
+	[ -L ~/.gitconfig ] && rm ~/.gitconfig
 
 brew: ## setup homebrew via Brewfile
 	/usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
