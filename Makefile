@@ -8,7 +8,7 @@ all: ## create bin,pkg,src and deploy all dotfiles
 	- [ -d ~/bin ] || mkdir -p ~/bin
 	- [ -d ~/pkg ] || mkdir -p ~/pkg
 	- [ -d ~/src ] || mkdir -p ~/src
-	- [ -d ~/.config] || mkdir -p ~/.config
+	- [ -d ~/.config ] || mkdir -p ~/.config
 	- [ -L ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
 	- [ -L ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
 	- [ -L ~/.gitconfig ] || ln -s $(PWD)/gitconfig ~/.gitconfig
