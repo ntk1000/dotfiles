@@ -5,19 +5,19 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST)  | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 all: ## create bin,pkg,src and deploy all dotfiles
-	[ -d ~/bin] || mkdir -p ~/bin
-	[ -d ~/pkg] || mkdir -p ~/pkg
-	[ -d ~/src] || mkdir -p ~/src
-	[ -d ~/.config] || mkdir -p ~/.config
-	[ -L ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
-	[ -L ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
-	[ -L ~/.gitconfig ] || ln -s $(PWD)/gitconfig ~/.gitconfig
-	[ -L ~/.config/hub ] || ln -s $(PWD)/hub ~/.config/hub
+	- [ -d ~/bin] || mkdir -p ~/bin
+	- [ -d ~/pkg] || mkdir -p ~/pkg
+	- [ -d ~/src] || mkdir -p ~/src
+	- [ -d ~/.config] || mkdir -p ~/.config
+	- [ -L ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
+	- [ -L ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
+	- [ -L ~/.gitconfig ] || ln -s $(PWD)/gitconfig ~/.gitconfig
+	- [ -L ~/.config/hub ] || ln -s $(PWD)/hub ~/.config/hub
 
 clean: ## clean dotfiles
-	[ -L ~/.vimrc ] && rm ~/.vimrc
-	[ -L ~/.zshrc ] && rm ~/.zshrc
-	[ -L ~/.gitconfig ] && rm ~/.gitconfig
+	- [ -L ~/.vimrc ] && rm ~/.vimrc
+	- [ -L ~/.zshrc ] && rm ~/.zshrc
+	- [ -L ~/.gitconfig ] && rm ~/.gitconfig
 
 brew: ## setup homebrew via Brewfile
 	/usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
