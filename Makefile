@@ -5,9 +5,9 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST)  | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 all: ## create bin,pkg,src and deploy all dotfiles
-	- [ -d ~/bin] || mkdir -p ~/bin
-	- [ -d ~/pkg] || mkdir -p ~/pkg
-	- [ -d ~/src] || mkdir -p ~/src
+	- [ -d ~/bin ] || mkdir -p ~/bin
+	- [ -d ~/pkg ] || mkdir -p ~/pkg
+	- [ -d ~/src ] || mkdir -p ~/src
 	- [ -d ~/.config] || mkdir -p ~/.config
 	- [ -L ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
 	- [ -L ~/.zshrc ] || ln -s $(PWD)/zshrc ~/.zshrc
