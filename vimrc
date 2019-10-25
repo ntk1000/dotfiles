@@ -9,7 +9,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'fatih/molokai' " molokai color scheme
 
 " syntax
-Plug 'fatih/vim-hclfmt' " for hcl
+Plug 'ntk1000/vim-hclfmt' " for hcl
 Plug 'godlygeek/tabular' " text filtering and alignment using for vim-markdown
 Plug 'plasticboy/vim-markdown' " for markdown
 Plug 'cespare/vim-toml' " for toml
@@ -375,6 +375,11 @@ nnoremap <leader>a :cclose<CR>
 " vnoremap <leader>gb :Gblame<CR>
 " nnoremap <leader>gb :Gblame<CR>
 " 
+" ////////////
+" vim-hclfmt
+" ////////////
+" let g:terraform_fmt_options = " -list=true -diff=true"
+
 " ////////////
 " vim-go
 " ////////////
