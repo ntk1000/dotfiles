@@ -29,7 +29,7 @@ vim: ## install plug.vim
 
 shell: ## setup zsh as default shell
 	sudo sh -c "grep -q '/usr/local/bin/zsh' /etc/shells || echo '/usr/local/bin/zsh' >> /etc/shells"
-	sudo chsh -s /usr/local/bin/zsh junasano
+	sudo chsh -s /usr/local/bin/zsh jun.asano
 
 octave: ## setup octave 2018 edition via http://www.schoeps.org/home/2018/01/how-to-compile-gnu-octave-with-openblas-on-macos/
 	brew tap dpo/openblas
