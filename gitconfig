@@ -23,3 +23,5 @@
   default = current
 [ghq]
   root = ~/src
+[pull]
+	rebase = false

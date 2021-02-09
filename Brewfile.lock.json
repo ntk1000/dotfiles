@@ -757,11 +757,36 @@
             }
           }
         }
+      },
+      "gh": {
+        "version": "1.5.0",
+        "bottle": {
+          "cellar": ":any_skip_relocation",
+          "prefix": "/usr/local",
+          "files": {
+            "arm64_big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/gh-1.5.0.arm64_big_sur.bottle.tar.gz",
+              "sha256": "46285720614f0a69645bd94265c5e1d798beaa92d41a6f3aabcf97f8747859a3"
+            },
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/gh-1.5.0.big_sur.bottle.tar.gz",
+              "sha256": "663bd535afe56f4d0cdd1a9677a1bcbf7f603805349120d4938e596beef65cfb"
+            },
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/gh-1.5.0.catalina.bottle.tar.gz",
+              "sha256": "0448e049f21a24a2ed9fe20bb5b5a5325b76570ea6faf78d50733954cc8cd715"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/gh-1.5.0.mojave.bottle.tar.gz",
+              "sha256": "ae889bc195283a5bf49e887dd2ba521f4c36971170941c4d6105eb76b820c40f"
+            }
+          }
+        }
       }
     },
     "tap": {
       "homebrew/cask-versions": {
-        "revision": "6c5f066110bf242b2f798bbb4b8e6a0f635405e1"
+        "revision": "b7e516d388c041393c4758c45ff8e4e3eae7dc87"
       }
     },
     "cask": {
@@ -844,7 +869,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "3.0.0",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "3455b3740d3396232caafb85ca5fe267f83ecb2f",
+        "Homebrew/homebrew-core": "7f75db2c5caad96f7642e990023d3a3bf2381e0b",
         "CLT": "12.0.32.29",
         "Xcode": "12.0",
         "macOS": "10.15.7"
