@@ -4,7 +4,6 @@ provision tools, dotfiles via shell
 ## init
 
 * run git command to install mac developer tools.
-* install displaymenu via app store
 * copy .ssh files via old mac
 * clone this repo
 
