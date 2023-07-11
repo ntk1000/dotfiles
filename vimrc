@@ -28,7 +28,6 @@ Plug 'tpope/vim-commentary' " comment stuff out
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } " tool like peco
 Plug 'junegunn/fzf.vim' "
 Plug 'ConradIrwin/vim-bracketed-paste' " automatic :set paste
-Plug 'SirVer/ultisnips' " snippet
 Plug 'Raimondi/delimitMate' " auto-completion for quotes, parens, brackets, etc.
 Plug 'mileszs/ack.vim' " search tool integrate with ag
 Plug 'scrooloose/nerdtree' " tree tool
@@ -179,7 +178,7 @@ function! StatusLinePercent()
 endfunction
 
 function! StatusLineLeftInfo()
- let branch = fugitive#head()
+ let branch = FugitiveHead()
  let filename = '' != expand('%:t') ? expand('%:t') : '[No Name]'
  if branch !=# ''
    return printf("%s | %s", branch, filename)

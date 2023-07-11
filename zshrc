@@ -121,7 +121,7 @@ function parse_git_dirty() {
 # AUTOCOMPLETION
 # ////////////
 
-fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+#fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 
 # enable completion
 autoload -U compinit
@@ -143,14 +143,14 @@ bindkey '^r' history-incremental-search-backward
 # ////////////
 
 # brew install jump via https://github.com/gsamokovarov/jump
-eval "$(jump shell)"
+#eval "$(jump shell)"
 
 # brew install direnv via https://github.com/direnv/direnv
-eval "$(direnv hook zsh)"
+#eval "$(direnv hook zsh)"
 
 # brew install goenv via 
-export PATH="$HOME/.goenv/bin:$PATH"
-eval "$(goenv init -)"
+#export PATH="$HOME/.goenv/bin:$PATH"
+#eval "$(goenv init -)"
 
 
 ##    AUTOCOMPLETION
@@ -249,6 +249,4 @@ eval "$(goenv init -)"
 #source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
-
-# added by travis gem
-[ -f /Users/junasano/.travis/travis.sh ] && source /Users/junasano/.travis/travis.sh
+eval "$(/opt/homebrew/bin/brew shellenv)"

@@ -20,7 +20,7 @@ clean: ## clean dotfiles
 	- [ -L ~/.gitconfig ] && rm ~/.gitconfig
 
 brew: ## setup homebrew via Brewfile
-	/usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	brew bundle cleanup
 	brew bundle
 
@@ -28,13 +28,7 @@ vim: ## install plug.vim
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 shell: ## setup zsh as default shell
-	sudo sh -c "grep -q '/usr/local/bin/zsh' /etc/shells || echo '/usr/local/bin/zsh' >> /etc/shells"
-	sudo chsh -s /usr/local/bin/zsh jun.asano
-
-octave: ## setup octave 2018 edition via http://www.schoeps.org/home/2018/01/how-to-compile-gnu-octave-with-openblas-on-macos/
-	brew tap dpo/openblas
-	brew tap-pin dpo/openblas
-	brew install dpo/openblas/octave --devel --with-qt --with-java
+	sudo chsh -s /bin/zsh jun.asano
 
 defaults: ## setup defaults write
 	defaults write com.apple.dock orientation -string "left"
