@@ -23,20 +23,6 @@ provision tools, dotfiles via shell
 * slack
 * chrome
 * setup via command
-	* goenv
-	```
-	goenv install 1.9.2
-	goenv global 1.9.2
-	```
-	* tfenv
-	```
-	tfenv install 0.8.4
-	tfenv use 0.8.4
-	```
-	* go tool
-	```
-	gotpl go get github.com/tsg/gotpl
-	hclfmt go get github.com/fatih/hclfmt
 	```
 	* setup names
 	```
